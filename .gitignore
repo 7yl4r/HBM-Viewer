@@ -1,0 +1,7 @@
+# IEEE template
+template/
+
+# latex build files
+*.log
+*.aux
+ 
