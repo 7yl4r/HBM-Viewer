@@ -358,22 +358,39 @@
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Michael Shell}
-\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-Georgia Institute of Technology\\
-Atlanta, Georgia 30332--0250\\
-Email: http://www.michaelshell.org/contact.html}
-\and
-\IEEEauthorblockN{Homer Simpson}
-\IEEEauthorblockA{Twentieth Century Fox\\
-Springfield, USA\\
-Email: homer@thesimpsons.com}
-\and
-\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
-\IEEEauthorblockA{Starfleet Academy\\
-San Francisco, California 96678-2391\\
-Telephone: (800) 555--1212\\
-Fax: (888) 555--1212}}
+\author{
+  \IEEEauthorblockN{Tylar Murray}
+  \IEEEauthorblockA{
+    University of South Florida\\
+    Department of Electrical Engineering\\
+    tylarmurray@mail.usf.edu
+  }
+  \and
+  \IEEEauthorblockN{Daniel Rivera}
+  \IEEEauthorblockA{
+    Arizona State University\\
+    Control Systems Engineering Laboratory
+  }
+  \and
+  \IEEEauthorblockN{Eric Hekler}
+  \IEEEauthorblockA{
+    Arizona State University\\
+    School of Nutrition and Health Promotion
+  }
+  \and
+  \IEEEauthorblockN{D. Spruijt-Metz}
+  \IEEEauthorblockA{
+    University of Southern California\\
+    Center for Economic and Social Research\\
+    Los Angeles, California
+  }
+  \and
+  \IEEEauthorblockN{Andrew Raij}
+  \IEEEauthorblockA{
+    University of Central Florida\\
+    Institute for Simulation and Training
+  }
+}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -412,7 +429,11 @@ Fax: (888) 555--1212}}
 
 \begin{abstract}
 %\boldmath
-The abstract goes here.
+In this paper we present relevant definitions and design considerations of special interest to those interested in human-behavior modeling software. 
+The guidelines presented here are based off of a user-survey and expert-panel review performed in development of the BehaviorSim model-building tool designed especially for use in behavioral science. 
+Lessons learned through iterations of this tool and unique considerations for those targeting behavioral scientists are highlighted. 
+Our initial survey of 12 behavioral scientists reveals the diversity of opinions on and approaches to behavior modeling within the community. 
+In order to address this, a theory-agnostic method for defining Human Behavior Models (HBMs) is proposed and techniques for supporting different modeling paradigms within a single user interface are discussed. 
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -436,28 +457,50 @@ The abstract goes here.
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
+\input{intro.tex}
 
+\section{Relevant Lit}
 
-\section{Introduction}
-% no \IEEEPARstart
-This demo file is intended to serve as a ``starter file''
-for IEEE conference papers produced under \LaTeX\ using
-IEEEtran.cls version 1.7 and later.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-I wish you the best of success.
+* other modeling softwares (and why it doesn’t fit this use case)
 
-\hfill mds
- 
-\hfill January 11, 2007
+* HBM examples /cite{Rivera}
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+* UI for “specialist systems”
 
+\section{User Stories}
+how does HBM model building fit into research process?
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+\section{Design Guidelines}
+(overview and definitions)
 
+* single-page design
+
+* information-searching / focus+context design
+
+* walk-through first use instead of tutorial (see, copy, do) /cite{?}
+
+* use existing terminology (but also define it)
+
+\section{Methodology}
+
+* user survey
+
+* expert panel review
+
+\section{Informing User story w/ survey data}
+what do the users want? (ref user survey)
+
+\section{Design guideline support and examples from past iterations of model builder}
+
+* multipage vs single-page (v0.1->v0.2)
+
+* inquiries in panel-reviews
+
+* single-page is overwhelming 
+
+* multiple terminologies from user surveys /cite{ontology} customizable? 
+
+\input{conclusion.tex}
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -542,24 +585,12 @@ Subsubsection text here.
 % command of the stfloats package.
 
 
-
-\section{Conclusion}
-The conclusion goes here.
-
-
-
-
 % conference papers do not normally have an appendix
 
 
 % use section* for acknowledgement
-\section*{Acknowledgment}
-
-
-The authors would like to thank...
-
-
-
+%\section*{Acknowledgment}
+%The authors would like to thank...
 
 
 % trigger a \newpage just before the given reference
