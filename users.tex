@@ -17,13 +17,13 @@ While keeping the non-linearity of this process in mind, we will now walk throug
 Draw the Diagram
 
 This task involves the creation and connecting of all nodes in the diagram. Nodes and their connections should be primarily based in theory, so a user should be able to build a first draft of their model with little feedback. Once the formulas for each node have been specified, however, it is likely that the user will want to return to this step and reassess the network. Several paradigms diagram-drawing have been well tested, but there are basically two options here:
-drag-and-drop node creation & drag-to-connect
+drag-and-drop node creation and drag-to-connect
 pros:
 easy and intuitive to use
 cons: 
 can be difficult to position nodes to reduce edge overlap
 users often distracted trying to make graph "pretty"
-requires constant switching between mouse & keyboard2
+requires constant switching between mouse and keyboard2
 Textual notation "language" for connecting nodes
 pros:
 can be much faster than mouse-based
@@ -65,7 +65,7 @@ Secondly, adjustment of coefficients would ideally show changes in the dynamics 
 Thirdly, model creators may want to set these coefficients in three different ways: 
 Set the coefficient value to a constant. All simulations derived from this general solution will have this exact value.
 Set a probability distribution for the coefficient. Simulations derived from this general solution will select a numerical value based on the given distribution. This distribution may be learned from a training dataset, or bounds may be set for later training. 
-Leave the variable unbounded and assume a flat probability distribution (this is essentially #2 with a flat distribution from -inf to +inf
+Leave the variable unbounded and assume a flat probability distribution (this is essentially no2 with a flat distribution from -inf to +inf
 These different ways of defining coefficients in a HBM become very important when it is time to run simulations and compare model results to real data. 
 
 Lastly, model creators may want to use a measured value to set the value of these coefficients. In this way, one measured input (in real life), such as big-5 personality type, can be used to set the value of multiple coefficients across different variables in the model.

@@ -3,7 +3,7 @@
 
 * single-page design
 
-* information-searching / focus+context design
+* information-searching / focus and context design
 
 * walk-through first use instead of tutorial (see, copy, do) /cite{?}
 
@@ -46,18 +46,18 @@ Adding even further to the confusion is the notion that these graphs are often d
 The most common analyses assess linear relationships between variables, and thus it is perhaps reasonable to assume that this is the intention of most authors.
 Assuming this is the case we can return to our simplistic example in Graph 1 and interpret the implied relationship as:
 
-B = coeff_ab*A + const
+$B = coeff_ab*A + const$
 Equation 1: coeff represents the correlation coefficient which relates A to B, 
 and const represents a scalar constant
 
 For nodes with multiple inflow edges, such as node B in the following graph:
 
-A => B <= C => D
+$A => B <= C => D$
 Graph 2: Example; now with more nodes!
 
 The resulting formulation is simply a sum of the inflows:
 
-B = coeff_ab*A + coeff_cb*C + const
+$B = coeff_ab*A + coeff_cb*C + const$
 Equation 2: Combining multiple inflows via sum is referred to as the superposition principle and is the defining characteristic of linear systems (not to be confused with this linear formulation)
 
 Using this formulation, the general form of our HBM is expressed via the network graph alone (perhaps along with a statement about what edges mean).
@@ -66,7 +66,7 @@ One important feature which this formulation does not take into account is the d
 This is very important for human behavior modeling because the variables in a HBM will often change their value over time.
 Taking time into account our formulation for Graph 1 becomes:
 
-B(t) = coeff_ab*A(t) + const
+$B(t) = coeff_ab*A(t) + const$
 
 Looking at this closely we can note that at each point in time the value of A depends only on the value of B at that same instant in time.
 This assumption is fine for many applications, but we argue that this is a very poor assumption for human behavior models. What if A is influenced by B but there is some lag before the effect manifests?
@@ -74,7 +74,7 @@ What if A is influenced by B, but only if B is above some threshold value? What 
 
 To resolve some of these issues, a differential equations can be used to describe the relationship between variables as described by (CSEL paper which connects path diagrams and fluid-flow). Using the differential formulation our equation for Graph 1 becomes:
 
-B(t) = TODO..
+$B(t) = TODO..$
 
 Just as before, our general model is not expressed entirely through the graph, and an ideographic example is specified by providing table of coefficient values.
 Our table is now quite a bit larger, but these coefficients have meaningful definitions which relate to our theory.
@@ -99,8 +99,8 @@ Consider for example the table below for Graph 2:
 
 node| formulation                              |    type
 ======================================================
-B   | coeff_ab*A(t) + coeff_cb*C(t) + const     |  linear eq.
-D   |      TODO....                             | differential eq.
+B   | $coeff_ab*A(t) + coeff_cb*C(t) + const$     |  linear eq.
+D   |      TODO....                               | differential eq.
 Table 1: an example formulation table for Graph 2 
 
 If a fixed number of functional forms is adhered to, the graph can be made to visually represent these functional forms through the use of different node icon shapes. 
@@ -119,9 +119,9 @@ Graph 3: The final example graph.
 
 node|      formulation                              | type
 ======================================================
-B   | coeff_ab*A(t) + coeff_cb*sqrt(C(t)) + const_b |  custom
-D   |      TODO....                                 | diff. eq.
-E   | coeff_de*D(t) + const_de                      | linear eq.
+B   | $coeff_ab*A(t) + coeff_cb*sqrt(C(t)) + const_b$ |  custom
+D   |      TODO....                                   | diff. eq.
+E   | $coeff_de*D(t) + const_de$                      | linear eq.
 Table 1: an example formulation table for Graph 2 
 
 
