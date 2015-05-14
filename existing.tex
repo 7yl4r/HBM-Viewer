@@ -1,13 +1,21 @@
 \section{Relevant Lit}
+% other modeling softwares (and why they don't fit this use case)
 
-* other modeling softwares (and why it doesn’t fit this use case)
 
-* HBM examples /cite{Rivera}
+Our review of existing tools and publications in the area of behavioral modeling has uncovered three types of tools: 1) Cognitive Architectures, 2) Agent Modeling Toolkits, and 3) Dynamical System Modeling Toolkits. 
+Though each approach seeks to address the problem of human behavioral modeling, the intended use of the model is very different. 
+Thus each approach makes an approximation of the human system from a different perspective, and the resulting models show little resemblence.
+
+
 \subsection{What is a Human Behavior Model?}
-In contrast to a cognitive model, a human behavior model attempts to model the human system’s conversion of measurable contextual information into measurable behavior outcome. 
-The variety of applications including something which may be considered a “human behavior model” is vast, but some of these applications better fit with the goal of increasing understanding of human behavior. 
-For our purposes, we describe three classes of human behavior models based on the expected application domain 1) models developed to act as automated decision agents, 2) models developed to identify emergent behavior of a population, and 3) models developed as predictors of behavior. 
-Using this classification scheme, it becomes clear that the methods underlying automated agents and emergent behavior simulations are less in line with the goal of behavioral theory development, and thus a focus on behavioral forecasting models is taken.
+A Human Behavior Model (HBM) attempts to model the human system’s conversion of measurable contextual information into measurable behavior outcome. 
+HBMs are a set which intersects the set of computational cognitive models.
+In contrast with cognitive models, HBMs put a greater emphasis on the measurable in and outflows of the human system which are becoming available through increased prevalence of wearable sensors and mobile devices, and thus models which offer little more than statistical relationship between contextual input and behavioral output may be considered an HBM.
+
+
+
+For our purposes, we classify the HBMs which best fit the goals of each approach as 1) Automation Agents - models developed to act as automated decision agents, 2) Emergent Behavior Studies - models developed to identify emergent behavior of a population, and 3) Cognitve Models - models developed for prediction and understanding of an individual's behavior. 
+
 \subsubsection{Automation Agents}
 Anyone familiar with agent-based modeling is likely familiar with the behavior-desire-intent (BDI) agent architecture which has found countless applications in the automation of industry tasks such as (EXAMPLES). 
 Agents of this type attempt to reproduce specific decision-making tasks reliably and predictably so that the task may be automated. 
@@ -28,7 +36,7 @@ TODO: Figure: Emergent Behavior studies focus on interactions of many behavioral
 
 Human behavior models developed to explore emergent behavior often neglect the intricacies of each agent’s inner workings because they are designed for efficient computation and accuracy on the level of the system rather than the individual. 
 
-\subsubsection{Behavioral Forecasting}
+\subsubsection{Cognitive Models}
 Lastly, models of human behavior are created to allow for predictive modeling of a behavioral phenomenon.
 Models in this category fit the definition given by Glanz and Rimer (2005 p4): "a set of interrelated concepts, definitions and propositions that present a systematic view of events or situations by specifying relations among variables, in order to explain or predict the events or situations".
 Since this type of model is useful for predicting and understanding the state of a user, formulations of theory may help overcome one of the most critical hurdles of affective computing and allow for automated intervention personalization and contextualization. 
@@ -44,6 +52,12 @@ Though all three presented classes of human behavior model may contribute to the
 
 It is important to note that behavioral forecasting models have applications outside of personalized predictions. 
 Behavior forecasting models can be applied in a simulation of a population of virtual humans and compared against real data to examine the fidelity of the model or to analyze the possible effects of certain contextual stimuli. 
+
+
+
+
+* HBM examples /cite{Rivera}
+
 
 
 * UI for “specialist systems”
