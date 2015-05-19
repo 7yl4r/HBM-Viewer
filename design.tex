@@ -1,14 +1,4 @@
 \section{Design}
-(overview and definitions)
-
-* single-page design
-
-* information-searching / focus and context design
-
-* walk-through first use instead of tutorial (see, copy, do) /cite{?}
-
-* use existing terminology (but also define it)
-
 In the ideal modeling toolkit, trained machine learning models can be tested alongside dynamical systems formulations of behavioral theory. 
 Though greater accuracy may often be achieved using a data-driven model, the theoretical formulation may provide additional insight into the system behavior, and connections to conceptual models can be drawn. 
 Enabling easy system configuration allows researchers to leverage the best of all fields, creating a balance between predictive accuracy and model clarity depending on the user’s needs. 
@@ -32,7 +22,8 @@ In general, however, a graph is comprised of nodes and edges which represent the
 We argue that the most intuitive representation is one which uses a directed graph wherein edge arrows to represent the flow of information between nodes.
 Thus, a HBM  directed graph edge from node A to node B indicates that information flows from node A into node B. 
 
-A => B
+$A => B$
+
 Graph 1: Can be read as "A influences B", "A informs B", or similar
 
 This choice of notation is in agreement with graphs used in information theory, communications models, and behavioral science.
@@ -47,17 +38,20 @@ The most common analyses assess linear relationships between variables, and thus
 Assuming this is the case we can return to our simplistic example in Graph 1 and interpret the implied relationship as:
 
 $B = coeff_ab*A + const$
+
 Equation 1: coeff represents the correlation coefficient which relates A to B, 
 and const represents a scalar constant
 
 For nodes with multiple inflow edges, such as node B in the following graph:
 
 $A => B <= C => D$
+
 Graph 2: Example; now with more nodes!
 
 The resulting formulation is simply a sum of the inflows:
 
 $B = coeff_ab*A + coeff_cb*C + const$
+
 Equation 2: Combining multiple inflows via sum is referred to as the superposition principle and is the defining characteristic of linear systems (not to be confused with this linear formulation)
 
 Using this formulation, the general form of our HBM is expressed via the network graph alone (perhaps along with a statement about what edges mean).
@@ -97,11 +91,16 @@ In this way one could craft a model in which two variables are linearly related 
 Unfortunately, this approach also means that a table of formulations must now be included with our graph to show the meaning of each edge in the graph.
 Consider for example the table below for Graph 2:
 
-node| formulation                              |    type
-======================================================
-B   | $coeff_ab*A(t) + coeff_cb*C(t) + const$     |  linear eq.
-D   |      TODO....                               | differential eq.
+\begin{centering}
+\begin{tabular}{ | l | l | l |}
+    \hline
+    node & formulation & type \\ \hline
+    B & $coeff_ab*A(t) + coeff_cb*C(t) + cosnst$ & linear eq. \\ \hline
+    D & $ TODO $ & differential eq. \\ \hline
+\end{tabular}
 Table 1: an example formulation table for Graph 2 
+\end{centering}
+
 
 If a fixed number of functional forms is adhered to, the graph can be made to visually represent these functional forms through the use of different node icon shapes. 
 This approach quickly begins to resemble applications which use flow-based programming. 
@@ -112,38 +111,38 @@ This is the least desirable situation, since the meaning of an inflow to each no
 Though this usage reduces the ability of the graph to reduce processing load on the user through abstraction, there may be some cases where this type of formulation is desirable. 
 Consider the following graph and formulation table:
 
-A => B <= C => D => E
+$A => B <= C => D => E$
+
 Graph 3: The final example graph.
 
-% TODO: convert this to latex table
-
-node|      formulation                              | type
-======================================================
-B   | $coeff_ab*A(t) + coeff_cb*sqrt(C(t)) + const_b$ |  custom
-D   |      TODO....                                   | diff. eq.
-E   | $coeff_de*D(t) + const_de$                      | linear eq.
-Table 1: an example formulation table for Graph 2 
-
+\begin{centering}
+\begin{tabular}{ | l | l | l |}
+    \hline
+    node & formulation & type \\ \hline
+    B & $coeff_ab*A(t) + coeff_cb*sqrt(C(t)) + const_b$ & custom \\ \hline
+    D & $ TODO $ & differential eq. \\ \hline
+    E & $coeff_de*D(t) + const_de$ & linear eq. \\ \hline
+\end{tabular}
+Table 2: an example formulation table for Graph 3
+\end{centering}
 
 In conclusion, we propose that an HBM should be specified using the following rules:
-
 % TODO: convert these to item-lists
 
-1 use a graph-wide formula assumption if possible
-
-2 when choosing a formulation, consistency between nodes is most important
-
-3 when choosing a formulation, simplicity and clarity is second only to consistency
-
-4 Thus a HBM specification must include:
-
-   An information flow graph
-
-   one of:
-
-* a graph-wide formulaic assumption
-
-* a formulation table 
+\begin{enumerate}
+  \item use a graph-wide formula assumption if possible
+  \item when choosing a formulation, consistency between nodes is most important
+  \item when choosing a formulation, simplicity and clarity is second only to consistency
+  \item Thus a HBM specification must include:
+  \begin{enumerate}
+   \item An information flow graph
+   \item one of:
+    \begin{itemize}
+      \item a graph-wide formulaic assumption
+      \item a formulation table 
+    \end{itemize}
+  \end{enumerate}
+\end{enumerate}
 
 In order to express a particular solution of a general HBM, an ideographic HBM must also include a table of coefficient values. 
 
@@ -154,3 +153,14 @@ The ease of use of a system is one of the most important factors in the adoption
 The trans-disciplinary nature of a human-behavior modeling toolkit may require special consideration in order to be usable by those who may be unfamiliar with modeling and simulation concepts.
 
 TODO: Figure: path2flow.png example of the rise in model complexity for the theory of planned behavior when mathematical assumptions are made explicit. (from: Ajzen 1985,1991,2002 (left), Nandola et al. 2013 (right))
+
+
+(overview and definitions)
+
+* single-page design
+
+* information-searching / focus and context design
+
+* walk-through first use instead of tutorial (see, copy, do) /cite{?}
+
+* use existing terminology (but also define it)
