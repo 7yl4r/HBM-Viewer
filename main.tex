@@ -457,14 +457,93 @@ In addition to these guidelines, a theory-agnostic method for defining Human Beh
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-\input{intro.tex}
-\input{existing.tex}
-\input{users.tex}
-\input{design.tex}
-\input{methods.tex}
-\input{results.tex}
-\input{discussion.tex}
-\input{conclusion.tex}
+\section{Introduction}
+\subsection{Problem Statement}
+* what is the problem with current behavioral science research methods?
+
+\subsection{Human Behavior Modeling}
+* how do HBMs address the issues raised in above problem statement?
+* how do they fall short?
+
+\subsection{Existing Tools}
+Our review of existing tools and publications in the area of behavioral modeling has uncovered three types of tools: 1) Dynamical System Modeling Toolkits, 2) Cognitive Architectures, and 3) Agent Modeling Toolkits. 
+Though each approach seeks to address the problem of human behavioral modeling, the intended use of the model is very different. 
+Thus each approach makes an approximation of the human system from a different perspective, and the resulting models show little resemblence.
+These three types of tools are in partial alignment with the aforementioned three classes of HBMs.
+
+\subsubsection{Dynamical System Modeling}
+Works in this group focus on generalized model-building. 
+Applications include network and business analysis as well as semi-physical system modeling. 
+One might be able to use these systems for modeling a human agent, but a more rigid model architecture for organizing the flow of information is needed. 
+One of the contributions of the behaviorSim toolkit is the implementation of a general structure of information flow through a human agent.
+
+Specialized modeling toolkits are often developed to create a variety of more detailed models focused around a single modeling goal. 
+This is precisely the goal of the behaviorSim toolkit. 
+In this search specialized toolkits focusing on neurological simulation, molecular dynamics, product inventory flow, economics, astrophysics, neurological networks, and power system modeling were all encountered in this search. 
+Works on more relevant topics such as social interaction and behavioral modeling are highlighted in the spreadsheet and warrant further investigation.
+
+\subsubsection{Cognitive Architectures}
+The next group is a large set of modeling toolkits which aim to create artificial intelligence through the modeling of cognitive processes. 
+Though a well implemented artificial intelligence will serve as an excellent model of human behavior, such an implementation seems far off. 
+The behaviorSim toolkit takes a more empirical approach to modeling cognitive functions than existing cognitive architectures.
+
+\subsubsection{Agent Modeling}
+Agent modeling has proven useful in many industrial and commercial applications across multiple disciplines. 
+Agent models are generally developed for one of two purposes: 1) to act as an intelligent actor in an automated task, or 2) to observe the emergent characteristics of many interacting agents. 
+The behaviorSim toolkit does not aim to accomplish either of these goals. 
+It is for this reason that the common BDI agent architecture is not suitable for modeling of human behavior based on empirical evidence. 
+
+\section{Case Studies}
+* iterative process with small numbers of testers as guided by \url(http://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/)
+
+\subsection{Paper-prototype Model-Building Task}
+* the pre-SBM, quiz-style model building walkthrough
+* tested on small user group, some behavioral scientists (my commitee), some grad students (pie memebers)
+
+Lessons learned:
+   terminology conflicts, engineering-workbook approach does not work well, users found the task much too challenging
+   
+\subsection{SBM questionairre}
+approx 50 surveys distributed following presentations on behavioral modeling and simulation, 12 returned. 
+survey included a rudimentary modeling exercise and questions about the barriers keeping modeling and sim out of behavioral science.
+Users had trouble with modeling exercise; most did not stray far from the given example, and others provided very different solutions which do not fit the ``engineer's view'' of the problem.
+
+Lessons learned:
+  the majority of behavioral scientists find the mathematics and programming overwhelming, and they want increased collaboration and tools to help.
+  
+\subsection{behaviorSim Model-Builder v1}
+* overview of design and testing methodology
+
+Think-aloud protocol with 2 behavioral scientists and 1 HCI expert. 
+
+Lessons learned:
+  Though the steps in the outlined process are sound (think, draw, specify, etc...), the step-wise design is difficult for users who are seeing the process one-step-at-a-time.
+  TODO: review my notes for more
+  
+\subsection{behaviorSim Model-Building Tutorial v1}
+Tutorial designed to help users see the bigger picture before diving into the step-wise process.
+Think-aloud protocol with 2 behavioral scientists and 1 HCI expert. 
+
+Lessons learned:
+  TODO: See notes for more
+
+\subsection{behaviorSim Model-Building Tool v2}
+Think-aloud protocol with 2 behavioral scientists and 1 HCI expert, 1 behavioral modeler
+
+Lessons Learned:
+  TODO: see notes for more
+  
+\section{Design Guidelines}
+* a summary of lessons learned and suggestions for future works
+
+\section{Proposed Tool: Model-Builder v3}
+* noflo, flow-based programming style
+* how does this new design use the design guidelines outlined?
+
+\section{Conclusion}
+We have provided design guidelines to aid in development of modeling and simulation tools for behavioral scientists based on lessons learned in the development process, and have outlined the design of an application which utilizes these guidelines.
+
+
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
