@@ -484,6 +484,7 @@ Note that these categories are not mutually exclusive - a single HBM could theor
 * how do they fall short?
 
 \subsection{Existing Tools}
+% TODO: add citations from spreadsheet
 Our review of existing tools and publications in the area of behavioral modeling has uncovered three types of tools: 1) Dynamical System Modeling Toolkits, 2) Cognitive Architectures, and 3) Agent Modeling Toolkits. 
 Though each approach seeks to address the problem of human behavioral modeling, the intended use of the model is very different. 
 Thus each approach makes an approximation of the human system from a different perspective, and the resulting models show little resemblence.
@@ -540,6 +541,25 @@ Think-aloud protocol with 2 behavioral scientists and 1 HCI expert.
 Lessons learned:
   Though the steps in the outlined process are sound (think, draw, specify, etc...), the step-wise design is difficult for users who are seeing the process one-step-at-a-time.
   TODO: review my notes for more
+  
+The first iteration of the behaviorSim Model-Builder (see figure \ref{model-builder-v1}) took a step-wise approach to the task, which made backtracking difficult.
+
+% [TODO picture of Model-Builder v0.1] 
+\begin{figure}[!t]
+  \centering
+  1 
+  \includegraphics[width=0.9\columnwidth]{img/v1-think}
+  \rule{\columnwidth}{0.4pt}
+  2
+  \includegraphics[width=0.9\columnwidth]{img/v1-draw}
+  \rule{\columnwidth}{0.4pt}
+  3
+  \includegraphics[width=0.9\columnwidth]{img/v1-specify}  
+  \caption{behaviorSim Model Builder v0.1.x separated model-building into three separate stages: 1) think, 2) draw, 3) specify.}
+  \label{model-builder-v1}
+\end{figure}
+
+A think-aloud assessment of this first version performed by four domain experts showed that in this design users have difficulty understanding how earlier choices related to later results, and feel constrained by previous choices rather than backtracking to revise the model.
   
 \subsection{behaviorSim Model-Building Tutorial v1}
 Tutorial designed to help users see the bigger picture before diving into the step-wise process.
@@ -750,25 +770,8 @@ The flow chart shown in figure \ref{HBM-build-process} represents the movement o
 It is important to note that the process of building is pseudo-linear; users will likely want to jump back to an arbitrary point in the process and as the model takes shape. 
 As the user moves through the process, they will re-assess the meaning of variables and connections and their model will solidify. 
 UI for an HBM-building tool should enable easy backtracking and should work to provide feedback on the characteristics of the model early. 
-The first iteration of the behaviorSim Model-Builder (see figure \ref{model-builder-v1}) took a step-wise approach to this task, which made backtracking difficult.
 
-% [TODO picture of Model-Builder v0.1] 
-\begin{figure}[!t]
-  \centering
-  1 
-  \includegraphics[width=0.9\columnwidth]{img/v1-think}
-  \rule{\columnwidth}{0.4pt}
-  2
-  \includegraphics[width=0.9\columnwidth]{img/v1-draw}
-  \rule{\columnwidth}{0.4pt}
-  3
-  \includegraphics[width=0.9\columnwidth]{img/v1-specify}  
-  \caption{behaviorSim Model Builder v0.1.x separated model-building into three separate stages: 1) think, 2) draw, 3) specify.}
-  \label{model-builder-v1}
-\end{figure}
-
-A think-aloud assessment of this first version performed by four domain experts showed that in this design users have difficulty understanding how earlier choices related to later results, and feel constrained by previous choices rather than backtracking to revise the model.
-
+%TODO: move this:
 The second generation of the Model Builder Tool presents a guided process which takes place within a single-page application. 
 In this way, users can see how choices influence the model in real-time, and thus can iterate on their design much sooner.
 
