@@ -550,9 +550,50 @@ Most did not stray far from the given example, and others provided very differen
 In the survey questions participants reported that the mathematics and programming concepts required for developing simulateable models were overwhelming, and nearly all participants expressed a desire for increased collaboration between disciplines and software tools to help them apply and validate these methods.
   
 \subsection{behaviorSim Model-Builder v1}
-* overview of design and testing methodology
+The behaviorSim Model-Building tool is a computational model-development environment aimed at behavioral scientists.
+In this iteration the modeling process is divided into the following five stages:
 
-Think-aloud protocol with 2 behavioral scientists and 1 HCI expert. 
+think - 
+Write out an explanation of your model. 
+How does it work? 
+What are the constructs involved? 
+What kind of information is coming into the model?
+
+draw - 
+Create an "information flow" path diagram to represent your theory. 
+Draw the flow of information between constructs. 
+What are the instreams to each, what are the outflows of each?
+
+specify - 
+How exactly can each construct be calculated from the inflows? 
+Use a fluid-flow analogy or linear combination to define a starting function and then adjust weights, delays, etc until the construct behaves as you think it should. 
+Do lots of thought experiments. 
+What should each step response look like? 
+What should each impulse response look like?
+
+reconcile - 
+Compare your simulation to real data. 
+Compare individual data and group data. 
+Compare the data at different time-scales. 
+How can you adjust the constants in your model to match the data? 
+Use semi-physical and grey-box model optimization methods. 
+Specify which constructs are most important to match and which may be less important by adjusting the cost function.
+
+play - 
+Explore all the 'what ifs' of your model. 
+Use system identification techniques on data to inform your model. 
+Is your model missing anything? 
+Is there anything in the data which you cannot explain? 
+Gain a rich understanding of what is going on even without 'p-values'.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=0.9\columnwidth]{img/behaviorSim_process}  
+  \caption{The five stages implemented in v1 of the behaviorSim Model Builder.}
+  \label{model-builder-tutorial}
+\end{figure}
+
+This aplication was tested using a think-aloud protocol with 2 behavioral scientists and 1 HCI expert. 
 
 Lessons learned:
   Though the steps in the outlined process are sound (think, draw, specify, etc...), the step-wise design is difficult for users who are seeing the process one-step-at-a-time.
@@ -583,6 +624,13 @@ Think-aloud protocol with 2 behavioral scientists and 1 HCI expert.
 
 Lessons learned:
   TODO: See notes for more
+ 
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=0.9\columnwidth]{img/v1-flow}  
+  \caption{behaviorSim Model Builder tutorial attempted to merge time-series and information-flow graph representations.}
+  \label{model-builder-tutorial}
+\end{figure}
 
 \subsection{behaviorSim Model-Building Tool v2}
 Think-aloud protocol with 2 behavioral scientists and 1 HCI expert, 1 behavioral modeler
