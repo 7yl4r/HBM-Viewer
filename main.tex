@@ -592,12 +592,6 @@ Gain a rich understanding of what is going on even without 'p-values'.
   \caption{The five stages implemented in v1 of the behaviorSim Model Builder.}
   \label{model-builder-tutorial}
 \end{figure}
-
-This aplication was tested using a think-aloud protocol with 2 behavioral scientists and 1 HCI expert. 
-
-Lessons learned:
-  Though the steps in the outlined process are sound (think, draw, specify, etc...), the step-wise design is difficult for users who are seeing the process one-step-at-a-time.
-  TODO: review my notes for more
   
 The first iteration of the behaviorSim Model-Builder (see figure \ref{model-builder-v1}) took a step-wise approach to the task, which made backtracking difficult.
 
@@ -616,19 +610,20 @@ The first iteration of the behaviorSim Model-Builder (see figure \ref{model-buil
   \label{model-builder-v1}
 \end{figure}
 
-A think-aloud assessment of this first version performed by four domain experts showed that in this design users have difficulty understanding how earlier choices related to later results, and feel constrained by previous choices rather than backtracking to revise the model.
+The model builder was tested using a think-aloud protocol with 2 behavioral scientists and 1 HCI expert. 
+Though the steps in the outlined model development process are accurate, a step-wise design is not optimal.
+Users who are forced to explore the process step-by-step have difficulty understanding how earlier choices related to later results, and feel constrained by previous choices rather than backtracking to revise the model.
+This design does not allow for quick iteration on models, and requires the user to maintain a great deal of planning information internally.
+
 Though the information flow diagram employed in this version worked well to convey information about the model to the users, the graph was also assumed to be interactive - participants made attempts to modify the graph by clicking, and attempted to select nodes in the specification stage by clicking on them.
 
 
 \subsection{behaviorSim Model-Building Tutorial v1}
-Tutorial designed to help users see the bigger picture before diving into the step-wise process.
-Think-aloud protocol with 2 behavioral scientists and 1 HCI expert. 
+After reviewing v1 of the behaviorSim Model Builder too, a tutorial was designed to help bridge the knowledge gap for new modelers looking to use the tool.
+In theory, the tutorial would help users see the bigger picture before diving into the step-wise process.
 
-
-
-
-Lessons learned:
-  TODO: See notes for more
+The tutorial was implemented as a walk-through of a simple model's internals.
+The tutorial also introduced a hybridized information-flow and time-series graph, wherein each node of the graph contains a time-series spanning a common timeframe, and a user interface for adjusting model parameters and updating time-series values instantaneously.
  
 \begin{figure}[!t]
   \centering
@@ -636,6 +631,11 @@ Lessons learned:
   \caption{behaviorSim Model Builder tutorial attempted to merge time-series and information-flow graph representations.}
   \label{model-builder-tutorial}
 \end{figure}
+
+The same think-aloud protocol as used for the evaluation of v1 of the model builder was used to evaluate this tutorial. 
+
+Lessons learned:
+  TODO: See notes for more
 
 \subsection{behaviorSim Model-Building Tool v2}
 Think-aloud protocol with 2 behavioral scientists and 1 HCI expert, 1 behavioral modeler
