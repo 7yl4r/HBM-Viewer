@@ -590,7 +590,7 @@ Gain a rich understanding of what is going on even without 'p-values'.
   \centering
   \includegraphics[width=0.9\columnwidth]{img/behaviorSim_process}  
   \caption{The five stages implemented in v1 of the behaviorSim Model Builder.}
-  \label{model-builder-tutorial}
+  \label{model-builder-stages}
 \end{figure}
   
 The first iteration of the behaviorSim Model-Builder (see figure \ref{model-builder-v1}) took a step-wise approach to the task, which made backtracking difficult.
@@ -633,15 +633,16 @@ The tutorial also introduced a hybridized information-flow and time-series graph
 \end{figure}
 
 The same think-aloud protocol as used for the evaluation of v1 of the model builder was used to evaluate this tutorial. 
+Through this evaluation it became clear that even more explicit definition of terms was needed in order to clarify persistant diciplinary differences.
 
-Lessons learned:
-  TODO: See notes for more
+% TODO: See notes for more
 
 \subsection{behaviorSim Model-Building Tool v2}
-Think-aloud protocol with 2 behavioral scientists and 1 HCI expert, 1 behavioral modeler
+The second major version of the behaviorSim Model Building tool attempted to unify all steps of the modeling process (figure \ref{model-builder-stages}) into a single-page application.
 
-Lessons Learned:
-  TODO: see notes for more
+This version was again reviewed using a think-aloud protocol with 2 behavioral scientists, 1 HCI expert, and 1 behavioral modeler.
+
+% TODO: see notes for more
   
 
 
@@ -736,9 +737,9 @@ Consider for example the table below for Graph 2:
 \begin{centering}
 \begin{tabular}{ | l | l | l |}
     \hline
-    node & formulation & type \\ \hline
-    B & $coeff_ab*A(t) + coeff_cb*C(t) + cosnst$ & linear eq. \\ \hline
-    D & $ TODO $ & differential eq. \\ \hline
+    node & formulation \\ \hline
+    B & $coeff_ab*A(t) + coeff_cb*C(t) + cosnst$  \\ \hline
+    D & $ TODO $ \\ \hline
 \end{tabular}
 Table 1: an example formulation table for Graph 2 
 \end{centering}
@@ -760,10 +761,10 @@ Graph 3: The final example graph.
 \begin{centering}
 \begin{tabular}{ | l | l | l |}
     \hline
-    node & formulation & type \\ \hline
-    B & $coeff_ab*A(t) + coeff_cb*sqrt(C(t)) + const_b$ & custom \\ \hline
-    D & $ TODO $ & differential eq. \\ \hline
-    E & $coeff_de*D(t) + const_de$ & linear eq. \\ \hline
+    node & formulation \\ \hline
+    B & $coeff_ab*A(t) + coeff_cb*sqrt(C(t)) + const_b$ \\ \hline
+    D & $ TODO $ \\ \hline
+    E & $coeff_de*D(t) + const_de$ \\ \hline
 \end{tabular}
 Table 2: an example formulation table for Graph 3
 \end{centering}
