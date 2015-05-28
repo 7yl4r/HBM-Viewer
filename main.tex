@@ -471,29 +471,33 @@ Just-in-Time Adaptive Interventions (JiTAI) promise to provide the optimal nudge
 Imagine, for example, an anti-stress app which knows not to interrupt your work meetings, but also knows when to play your favorite song to help you relax on the drive home.
 Or consider a smoking cessation app that knows precisely when and where you are most likely to crave, and distracts you with a game of sudoku before you even realize you were about to want a cigarette.
 The impending wave of context-aware, affective computing applications seems to be the holy grail of behavior change, but researchers are increasingly finding that our models of human behavior are not ready.
-The search space of designing an intervention for even a single user can be prohibitively large,
+Traditional models of behavior do not offer the granularity and specificity needed for these applications.
+These psychological models of human behavior act as a guide for behavioral scientists looking to predict behavior, but are rarely computational in nature - making their application in adaptive systems impossible.
 
 Though the machine learning approaches which are enabling detailed behavior-prediction can be applied to behavioral research problems, the inner workings of these models often do not tell researchers much about how the human system works. 
-
-On the other hand, psychological models of human behavior act as a guide for behavioral scientists looking to predict behavior, but are rarely computational in nature - making their application in adaptive systems impossible.
+These empirically founded models, through useful for exploring a specific cases in detail, also cannot fill this role.
+The search space of intervention design is be very large; it must be narrowed using our a priori understanding of the human system and guided by the heuristic methods of traditional modeling.
 
 A hybridization of these two approaches may allow researchers to leverage the strength of each as they are applied in adaptive behavioral interventions.
+Methods for creating computational models of human behavior are not well defined however, though the area is not completely unexplored.
 
 \subsection{Human Behavior Modeling}
-A Human Behavior Model (HBM) is any computational model which attempts to define the human system’s conversion of measurable contextual information into measurable behavior outcome. 
+In this work we define a Human Behavior Model (HBM) as any computational model which attempts to define the human system’s conversion of measurable contextual information into measurable behavior outcome. 
 HBMs are a set which intersects the set of computational cognitive models, both sets include approximations of cognitive processes, but in contrast with cognitive models, HBMs put a greater emphasis on the measurable in and outflows of the human system.
 Cognitive models traditionally have focused on creating a comprehensible reprentation of cognitive processes, but HBMs have no such restriction and require only that a model define behavioral output as some function of contextual input.
 Thus HBMs include formulations which may not be considered a cognitive model.
 For instance, a model which offers little more than statistical relationship between contextual input and behavioral output may be considered an HBM.
 
-For our purposes, we classify HBMs uncovered by our literature review into three classes based on intended application 1) Automation Agents - models developed to act as automated decision agents, 2) Emergent Behavior Studies - models developed to identify emergent behavior of a population, and 3) Cognitve HBMs - models developed for prediction and understanding of an individual's behavior.
+For our purposes, we classify HBMs uncovered by our literature review into three classes based on intended application 1) Automation Agents - models developed to act as automated decision agents, 2) Emergent Behavior Study Agents - models developed to identify emergent behavior of a population, and 3) Cognitve HBMs - models developed for prediction and understanding of an individual's behavior.
 Note that these categories are not mutually exclusive - a single HBM could theoretically fufill all three roles, but the requirements for each category are quite different, and thus existing models in each category are usually quite different.
 
-% TODO: need to summarize automation agents and emergent studies and explain why they are not relevant (maybe include text on each section from research log), OR need to remove them above and focus only on cognitive HBMs
+Though there is much which can be learned from models built to act as automation agents or as agent models in emergent behavior studies, our primary focus is on the emerging group referred to as Cognitive HBMs (CHBMs).
+CHBMs fill the gap between the heuristics laid out by existing psychological models and systems modeling, offering expressions of psychological models in computational terms which can be used in simulation.
 
-* TODO: how do HBMs address the issues raised in above problem statement?
-* why are they important for the future behavioral research? \cite{riley2011}
-* how do they fall short?
+Because CHBMs offer both numeric representations of behavior and an underlying heuristic model they can be used in both intervention design and an automated intervention-optimization system such as would be required by a JiTAI.
+
+% TODO: * why are they important for the future behavioral research? \cite{riley2011}
+% TODO: * how do they fall short?
 
 \subsection{Existing Tools}
 % TODO: add citations from spreadsheet
