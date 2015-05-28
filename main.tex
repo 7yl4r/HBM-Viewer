@@ -804,6 +804,8 @@ In conclusion, we propose that an HBM should be specified using the following ru
 In order to express a particular solution of a general HBM, an ideographic HBM must also include a table of coefficient values. 
 
 \subsection{Tool Design Guidelines}
+% * a summary of lessons learned and suggestions for future works
+
 The guidelines provided below are generalizable findings from our studies which may be useful for other developing modeling and simulation tools for behavioral scientists.
 
 
@@ -820,23 +822,16 @@ The trans-disciplinary nature of a human-behavior modeling toolkit may require s
 
 % TODO: Figure: path2flow.png use proper citations
 
-(overview and definitions)
-
+\subsubsection{Multiple Levels of Information Depth}
 * information-searching / focus and context design
+* use existing terminology (but also define it)
+* multiple terminologies from user surveys /cite{ontology} customizable? 
 
+\subsubsection{Walkthrough Instead of Tutorial}
 * walk-through first use instead of tutorial (see, copy, do) /cite{?}
 
-* use existing terminology (but also define it)
-
-* a summary of lessons learned and suggestions for future works
-
+\subsubsection{Enable Quick Model Iteration}
 * multipage vs single-page (v0.1->v0.2)
-
-* inquiries in panel-reviews
-
-* single-page is overwhelming 
-
-* multiple terminologies from user surveys /cite{ontology} customizable? 
 
 
 
@@ -879,32 +874,13 @@ This task involves the creation and connecting of all nodes in the diagram.
 Nodes and their connections should be primarily based in theory, so a user should be able to build a first draft of their model with little feedback. 
 Once the formulas for each node have been specified, however, it is likely that the user will want to return to this step and reassess the network. 
 Several paradigms diagram-drawing have been well tested, but there are essentially two prevailing options:
-1) drag-and-drop node creation with drag-to-connect edges, and 2) textual ``diagram specification language''.
+1) drag-and-drop node creation with drag-to-connect edges, and 2) textual ``diagram specification language'' (DSL).
 
-\paragraph{drag-and-connect}
-pros:
-\begin{enumerate}
-  \item{easy and intuitive to use}
-\end{enumerate}
-cons:
-\begin{enumerate}
- \item can be difficult to position nodes to reduce edge overlap
- \item users often distracted trying to make graph "pretty"
- \item requires constant switching between mouse and keyboard2
-\end{enumerate}
+Drag-and-drop modeling has the benefit of being intuitive, but nodes can be difficult to position to reduce edge overlap leading to users often distracted trying to optimize the layout.
 
-\paragraph{Diagram Specification Language}
-pros:
-\begin{enumerate}
- \item can be much faster than mouse-based
- \item searching/finding nodes for modification is as easy as textual search
-\end{enumerate}
+The use of a DSL can be much faster than mouse-based, and also has the benefit that searching/finding nodes for modification is as easy as textual search of the DSL.
+On the other hand, DSL parsing errors can be a major source of confusion and users may be more frustrated as they attempt to master your markup language.
 
-cons:
-\begin{enumerate}
- \item parsing errors can be a source of confusion
- \item user must learn the markup "language"
-\end{enumerate}
 
 \subsubsection{Use Graph-Wide Rule?}
 This choice can come before or after the initial drawing of the graph, since it is likely the user has a graph-wide assumption in mind when starting the process. 
