@@ -694,10 +694,10 @@ Adding even further to the confusion is the notion that these graphs are often d
 The most common analyses assess linear relationships between variables, and thus it is perhaps reasonable to assume that this is the intention of most authors.
 Assuming this is the case we can return to our simplistic example in Graph 1 and interpret the implied relationship as:
 
-$B = coeff_{ab}*A + const$
+$B(t) = coeff_{ab}A(t) + const_b$
 
-Equation 1: coeff represents the correlation coefficient which relates A to B, 
-and const represents a scalar constant
+Equation 1: $coeff_{ab}$ represents the correlation coefficient which relates A to B, 
+and $const_b$ represents a scalar constant.
 
 For nodes with multiple inflow edges, such as node B in the following graph:
 
@@ -707,7 +707,7 @@ Graph 2: Example; now with more nodes!
 
 Continuing with our our assumption that node interrelations act as linear sums, the resulting formulation is simply a sum of the inflows:
 
-$B(t) = coeff_{ab}*A(t) + coeff_{cb}*C(t) + const$
+$B(t) = coeff_{ab}A(t) + coeff_{cb}C(t) + const_b$
 
 Equation 2: Combining multiple inflows via sum is referred to as the superposition principle and is the defining characteristic of linear systems (not to be confused with this linear formulation)
 
@@ -717,7 +717,7 @@ One important feature which this formulation does not take into account is the d
 This is very important for human behavior modeling because the variables in a HBM will often change their value over time.
 Taking time into account our formulation for Graph 1 becomes:
 
-$B(t) = coeff_{ab}*A(t) + const$
+$B(t) = coeff_{ab}A(t) + const$
 
 Looking at this closely we can note that at each point in time the value of A depends only on the value of B at that same instant in time.
 This assumption is fine for many applications, but we argue that this is a very poor assumption for human behavior models. What if A is influenced by B but there is some lag before the effect manifests?
@@ -725,7 +725,7 @@ What if A is influenced by B, but only if B is above some threshold value? What 
 
 To resolve some of these issues, a differential equations can be used to describe the relationship between variables as described by (CSEL paper which connects path diagrams and fluid-flow). Using the differential formulation our equation for Graph 1 becomes:
 
-$B(t) = coeff_{ab}*A(t-\theta_{ab}) - \tau_{b}*\frac{dB}{dt} + const$
+$B(t) = coeff_{ab}A(t-\theta_{ab}) - \tau_{b}\frac{dB}{dt} + const$
 
 Just as before, our general model is not expressed entirely through the graph, and an ideographic example is specified by providing table of coefficient values.
 Our table is now quite a bit larger, but these coefficients have meaningful definitions which relate to our theory.
@@ -741,7 +741,7 @@ Indeed formulations could even subvert the "arrow direction" by drawing informat
 The graph can then no longer be considered a directed graph, and the meaning of an edge becomes less clear.
 Additionally, the table of coefficients needed to express an ideographic case of the model quickly becomes prohibitively large, and the effect of each coefficient on the outcome is not intuitively meaningful.
 
-Let us now consider the case where a graph-wide assumption is NOT made.
+Let us now consider the case where a graph-wide assumption is \emph{NOT} made.
 That is, we will specify the functional form of each node individually so that each edge on the graph may be linear in form while another may be differential.
 This has the benefit of allowing for both complex relationships between variables as well as simplistic ones.
 In this way one could craft a model in which two variables are linearly related and a third is dependent on the variance of another variable (a particularly odd formulation, but one which is relevant to behavioral theory).
@@ -755,8 +755,8 @@ $A => B <= C => D$
 \begin{tabular}{ | l | l | l |}
     \hline
     node & formulation \\ \hline
-    B & $coeff_ab*A(t) + coeff_cb*C(t) + cosnst$  \\ \hline
-    D & $coeff_{cd}*C(t-\theta_{cd}) - \tau_{d}*\frac{dD}{dt} + const$ \\ \hline
+    B & $coeff_{ab}A(t) + coeff_{cb}C(t) + cosnst_b$  \\ \hline
+    D & $coeff_{cd}C(t-\theta_{cd}) - \tau_{d}\frac{dD}{dt} + const_d$ \\ \hline
 \end{tabular}
 Table 1: an example formulation table for Graph 2 
 \end{centering}
@@ -779,9 +779,9 @@ Graph 3: The final example graph.
 \begin{tabular}{ | l | l | l |}
     \hline
     node & formulation \\ \hline
-    B & $coeff_ab*A(t) + coeff_cb*sqrt(C(t)) + const_b$ \\ \hline
-    D & $ TODO $ \\ \hline
-    E & $coeff_de*D(t) + const_de$ \\ \hline
+    B & $coeff_{ab}A(t) + coeff_{cb}sqrt(C(t)) + const_b$ \\ \hline
+    D & $coeff_{cd}C(t-\theta_{cd}) - \tau_{d}\frac{dD}{dt} + const_{d}$ \\ \hline
+    E & $coeff_{de}D(t) + const_{e}$ \\ \hline
 \end{tabular}
 Table 2: an example formulation table for Graph 3
 \end{centering}
@@ -841,17 +841,6 @@ The trans-disciplinary nature of a human-behavior modeling toolkit may require s
 
 
 \section{Proposed Tool: Model-Builder v3}
-* noflo, flow-based programming style
-* how does this new design use the design guidelines outlined?
-
-\begin{figure}[!t]
-  \centering
-  \includegraphics[width=0.9\columnwidth]{img/v3}  
-  \caption{behaviorSim Model Builder v3 brings increased focus onto the graph using a flow-based programming approach.}
-  \label{model-builder-v3}
-\end{figure}
-
-
 \subsection{User Interface Design for HBM-builder }
 The flow chart shown in figure \ref{HBM-build-process} represents the movement of a user through the process of building an HBM, or any graphical model for that matter.
 
@@ -955,6 +944,18 @@ Perhaps the best paradigm here is to progress as naturally as possible, but allo
 This interaction mode is needed to allow for later model-tweaking anyway. 
 
 The behaviorSim Model Builder v0.2 currently does not include significant enough indicator of node "completeness", so that the user is sometimes unsure when they should feel free to move to the next node.
+
+\subsection{Implementation}
+%TODO:
+* noflo, flow-based programming style
+* how does this new design use the design guidelines outlined?
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=0.9\columnwidth]{img/v3}  
+  \caption{behaviorSim Model Builder v3 brings increased focus onto the graph using a flow-based programming approach.}
+  \label{model-builder-v3}
+\end{figure}
 
 
 
