@@ -705,9 +705,9 @@ $A => B <= C => D$
 
 Graph 2: Example; now with more nodes!
 
-The resulting formulation is simply a sum of the inflows:
+Continuing with our our assumption that node interrelations act as linear sums, the resulting formulation is simply a sum of the inflows:
 
-$B = coeff_{ab}*A + coeff_{cb}*C + const$
+$B(t) = coeff_{ab}*A(t) + coeff_{cb}*C(t) + const$
 
 Equation 2: Combining multiple inflows via sum is referred to as the superposition principle and is the defining characteristic of linear systems (not to be confused with this linear formulation)
 
@@ -725,7 +725,7 @@ What if A is influenced by B, but only if B is above some threshold value? What 
 
 To resolve some of these issues, a differential equations can be used to describe the relationship between variables as described by (CSEL paper which connects path diagrams and fluid-flow). Using the differential formulation our equation for Graph 1 becomes:
 
-$B(t) = \tao_b * \frac{dB}{dt} +  $
+$B(t) = coeff_{ab}*A(t-\theta_{ab}) - \tau_{b}*\frac{dB}{dt} + const$
 
 Just as before, our general model is not expressed entirely through the graph, and an ideographic example is specified by providing table of coefficient values.
 Our table is now quite a bit larger, but these coefficients have meaningful definitions which relate to our theory.
@@ -748,12 +748,15 @@ In this way one could craft a model in which two variables are linearly related 
 Unfortunately, this approach also means that a table of formulations must now be included with our graph to show the meaning of each edge in the graph.
 Consider for example the table below for Graph 2:
 
+$A => B <= C => D$
+
+
 \begin{centering}
 \begin{tabular}{ | l | l | l |}
     \hline
     node & formulation \\ \hline
     B & $coeff_ab*A(t) + coeff_cb*C(t) + cosnst$  \\ \hline
-    D & $ TODO $ \\ \hline
+    D & $coeff_{cd}*C(t-\theta_{cd}) - \tau_{d}*\frac{dD}{dt} + const$ \\ \hline
 \end{tabular}
 Table 1: an example formulation table for Graph 2 
 \end{centering}
