@@ -646,6 +646,8 @@ Through this evaluation it became clear that even more explicit definition of te
 
 \subsection{behaviorSim Model-Building Tool v2}
 The second major version of the behaviorSim Model Building tool attempted to unify all steps of the modeling process (figure \ref{model-builder-stages}) into a single-page application.
+%The second generation of the Model Builder Tool presents a guided process which takes place within a single-page application. 
+In this way, users can see how choices influence the model in real-time, and thus can iterate on their design much sooner.
 
 \begin{figure}[!t]
   \centering
@@ -655,6 +657,10 @@ The second major version of the behaviorSim Model Building tool attempted to uni
 \end{figure}
 
 This version was again reviewed using a think-aloud protocol with 2 behavioral scientists, 1 HCI expert, and 1 behavioral modeler.
+Though the single-page design of version two did seem to allow for increased ability to iteratively explore models, reviewers now found the user interface overwhelming.
+Upon starting the review, users often felt unsure where to start.
+Furthermore the disconnect between the information flow graphic and the related UI elements below was not obvious.
+Reviewers did identify the relationship after some exploration, however. 
 
 % TODO: see notes for more
   
@@ -787,7 +793,6 @@ Table 2: an example formulation table for Graph 3
 \end{centering}
 
 In conclusion, we propose that an HBM should be specified using the following rules:
-% TODO: convert these to item-lists
 
 \begin{enumerate}
   \item use a graph-wide formula assumption if possible
@@ -854,10 +859,6 @@ The flow chart shown in figure \ref{HBM-build-process} represents the movement o
 It is important to note that the process of building is pseudo-linear; users will likely want to jump back to an arbitrary point in the process and as the model takes shape. 
 As the user moves through the process, they will re-assess the meaning of variables and connections and their model will solidify. 
 UI for an HBM-building tool should enable easy backtracking and should work to provide feedback on the characteristics of the model early. 
-
-%TODO: move this:
-The second generation of the Model Builder Tool presents a guided process which takes place within a single-page application. 
-In this way, users can see how choices influence the model in real-time, and thus can iterate on their design much sooner.
 
 While keeping the non-linearity of this process in mind, we will now walk through the diagram and address design considerations for each part of the process.
 
@@ -946,9 +947,12 @@ This interaction mode is needed to allow for later model-tweaking anyway.
 The behaviorSim Model Builder v0.2 currently does not include significant enough indicator of node "completeness", so that the user is sometimes unsure when they should feel free to move to the next node.
 
 \subsection{Implementation}
-%TODO:
-* noflo, flow-based programming style
-* how does this new design use the design guidelines outlined?
+Version 3 of the model builder addresses the issues uncovered in previous versions by relying on a flow-based programming interface.
+Flow-based programming has seen increased usage across a multiple engineering domains, and seems to fit the task of system specification particularly well.
+Using an open-source implementation of a flow-based programming protocol, noflo.js, the graphical representation of the model can be further connected to the formulation.  %TODO: cite
+Node inputs (constants, coefficients, other nodes) can be directly shown as input hubs on the node, and differing node formulations can be represented graphically.
+
+% TODO: * how does this new design use the design guidelines outlined?
 
 \begin{figure}[!t]
   \centering
