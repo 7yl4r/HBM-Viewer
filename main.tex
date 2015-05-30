@@ -645,13 +645,29 @@ These stages, while critical for the development of an accurate model, were also
 
 The same think-aloud protocol as used for the evaluation of v1 of the model builder was used to evaluate this tutorial. 
 Through this evaluation it became clear that even more explicit definition of terms was needed in order to clarify persistant diciplinary differences.
+Reviewers also wanted better explanation of the models' input parameters and of the functional definition of the system.
+They were not content with the hard-coded environmental inputs and wanted to be ablet to define how the contextual inflows changed over time.
+Though the hybrid graph was found helpful in conveying the connection between path diagram nodes and time series, the shared time-axis was not obvious, and reviewers expressed a need for more explicit x and y axes as well as a better explanation as to what ``10 units of self efficacy'' at some point in time actually means.
 
 % TODO: See notes for more
 
 \subsection{behaviorSim Model-Building Tool v2}
 The second major version of the behaviorSim Model Building tool attempted to unify all steps of the modeling process (figure \ref{model-builder-stages}) into a single-page application.
 %The second generation of the Model Builder Tool presents a guided process which takes place within a single-page application. 
-In this way, users can see how choices influence the model in real-time, and thus can iterate on their design much sooner.
+In this way, users can see how choices influence the model in real-time, and thus can iterate on their design more easily.
+To address the terminology gap which plagued v1, a set of tooltips were added which revealed detailed definitions for key terms used in the user interface.
+In addition, the second version incorporates findings from the v1 tutorial, adding a ``miniature simulation'' to the application to allow for ``reconsiliation'' and ``play''.
+
+In this version of the tool, users declare constructs and define the structure of their model simultaneously by specifying on the connections using a simple Diagram Specification Language (DSL). 
+The type of each node is then inferred from the number of inflows and outflows.
+This approach combines stages 1 (think) and 2 (draw) in into a single user action.
+
+The ``miniature simulation'' concept allows users to specify hypothetical contexts in which to explore the model dynamics, without the need to specify the full model.
+Users can specify environmental inflows for the ``miniature simulation'', choosing from adjustable presets (square wave, step function, random walk, or constant value).
+Selecting nodes on the graph by clicking, users can traverse the graph in any order.
+Time-series plots of inflows as well as the resulting outflow at each node are provided using the miniature simulation model.
+Internal state and behavioral nodes are specified similarly to environmental inflows through customization of function presets such as ``linear combination'' and ``fluid flow analogy''\cite{martin2014dynamical}.
+
 
 \begin{figure}[!t]
   \centering
@@ -665,9 +681,8 @@ Though the single-page design of version two did seem to allow for increased abi
 Upon starting the review, users often felt unsure where to start.
 Furthermore the disconnect between the information flow graphic and the related UI elements below was not obvious.
 Reviewers did identify the relationship after some exploration, however. 
-
-% TODO: see notes for more
-  
+The combination of the ``think'' and ``draw'' stages in this design broke down the distinction between einvironmental inflows, state variables, and behavioral outputs, leading to to some confusion when specifying the various types of nodes.
+Further contributing to this problem, the purpose of the mini-simulation was not clear to reviewers, though the inclusion of time-series graphs was found helpful for understanding the model functions and their parameters.
 
 
   
