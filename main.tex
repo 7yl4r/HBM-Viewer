@@ -687,7 +687,7 @@ Thus, a directed graph edge from node A to node B indicates that information flo
 
 \begin{centering}
   $A => B$\\
-  Graph 1: Can be read as "A influences B", "A informs B", or similar
+  \small{Graph 1: Can be read as "A influences B", "A informs B", or similar.}
 \end{centering}
   
 This choice of notation is in agreement with graphs used in information theory, communications models, and behavioral science.
@@ -703,22 +703,21 @@ Assuming this is the case we can return to our simplistic example in Graph 1 and
 
 \begin{centering}
 $B(t) = coeff_{ab}A(t) + const_b$\\
-Equation 1: $coeff_{ab}$ represents the correlation coefficient which relates A to B, 
-and $const_b$ represents a scalar constant.
+\small{Equation 1: $coeff_{ab}$ represents the correlation coefficient which relates A to B, and $const_b$ represents a scalar constant.}
 \end{centering}
 
 For nodes with multiple inflow edges, such as node B in the following graph:
 
 \begin{centering}
 $A => B <= C => D$\\
-Graph 2: B depends on nodes A and C
+\small{Graph 2: B depends on nodes A and C.}
 \end{centering}
 
 Continuing with our our assumption that node interrelations act as linear sums, the resulting formulation is simply a sum of the inflows:
 
 \begin{centering}
 $B(t) = coeff_{ab}A(t) + coeff_{cb}C(t) + const_b$\\
-Equation 2: Combining multiple inflows via sum is referred to as the superposition principle and is the defining characteristic of linear systems (not to be confused with this linear formulation)
+\small{Equation 2: Combining multiple inflows via sum is referred to as the superposition principle and is the defining characteristic of linear systems (not to be confused with this linear formulation)}
 \end{centering}
 
 Using this formulation, the general form of our HBM is expressed via the network graph alone (perhaps along with a statement about what edges mean).
