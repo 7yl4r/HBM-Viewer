@@ -474,31 +474,29 @@ However, methods for creating computational models of human behavior are not wel
 
 \subsection{Human Behavior Modeling}
 In this work we define a Human Behavior Model (HBM) as any computational model which attempts to define the human system's conversion of measurable contextual information into measurable behavior outcome. 
-HBMs are a set which intersects the set of computational cognitive models, both sets include approximations of cognitive processes, but in contrast with cognitive models, HBMs put a greater emphasis on the measurable inflows and outflows of the human system.
-Cognitive models traditionally have focused on creating a comprehensible representation of cognitive processes, but HBMs have no such restriction and require only that a model define behavioral output as some function of contextual input.
-Thus HBMs include formulations which may not be considered a cognitive model.
-For instance, a model which offers little more than statistical relationship between contextual input and behavioral output may be considered an HBM.
+% HBMs are a set which intersects the set of computational cognitive models, both sets include approximations of cognitive processes, but in contrast with cognitive models, HBMs put a greater emphasis on the measurable inflows and outflows of the human system.
+% Cognitive models traditionally have focused on creating a comprehensible representation of cognitive processes, but HBMs have no such restriction and require only that a model define behavioral output as some function of contextual input.
+% Thus HBMs include formulations which may not be considered a cognitive model.
+% For instance, a model which offers little more than statistical relationship between contextual input and behavioral output may be considered an HBM.
 
 For our purposes, we classify HBMs uncovered by our literature review into three classes based on intended application 1) Automation Agents\cite{wooldridge1995agent} - models developed to act as automated decision agents, 2) Emergent Behavior Study Agents\cite{li2006survey} - models developed to identify emergent behavior of a population as a system, and 3) Cognitive HBMs - models developed for prediction and understanding of an individual's behavior.
 Note that these categories are not mutually exclusive - a single HBM could theoretically fufill all three roles, but the requirements for each category are quite different.
 
 Though there is much which can be learned from models built to act as automation agents or as agent models in emergent behavior studies, our primary focus is on the emerging group referred to as Cognitive HBMs (CHBMs).
-CHBMs fill the gap between the heuristics laid out by existing psychological models and systems modeling, offering computational expressions of the easily understood abstractions of psychological models in computational terms which can be used in simulation.
-
+CHBMs fill the gap between the heuristics laid out by existing psychological models and systems modeling, offering computational expressions of the easily understood abstractions of psychological models in computational terms which can be used in simulation. 
 Because CHBMs offer both numeric representations of behavior and an underlying heuristic model they can be used in both intervention design and an automated intervention-optimization system such as would be required by a JiTAI.
 
 \subsection{Existing Tools}
 Our review of existing tools and publications in the area of behavioral modeling has uncovered three types of tools: 1) Dynamical System Modeling Toolkits, 2) Cognitive Architectures, and 3) Agent Modeling Toolkits. 
 Though each approach seeks to address the problem of human behavioral modeling, the intended use of the model is very different. 
 Thus each approach makes an approximation of the human system from a different perspective, and the resulting models show little resemblance to one another.
-These three types of tools are in partial alignment with the aforementioned three classes of HBMs, but much crossover exists.
+% These three types of tools are in partial alignment with the aforementioned three classes of HBMs, but much crossover exists.
 
 \subsubsection{Dynamical System Modeling}
 Works in this group focus on generalized model-building. 
 Applications include network and business analysis as well as semi-physical system modeling. 
 One might be able to use these systems for modeling a human agent, but a more rigid model architecture for organizing the flow of information is needed. 
-Though generalized modeling software is available \cite{chen2013open, eberlein1992understanding, uhlig1995toolkit}
-Specialized modeling toolkits are often developed to create a variety of detailed models focused around a single modeling goal. 
+Though generalized modeling software is available \cite{chen2013open, eberlein1992understanding, uhlig1995toolkit}, specialized modeling toolkits are often developed to create a variety of detailed models focused around a single modeling goal. 
 In our search, specialized toolkits focusing on neurological simulation\cite{beim2009inverse}, molecular dynamics\cite{blinov2004bionetgen, le2001stochsim}, astrophysics\cite{mcmillan2011simulations}, and power system modeling\cite{nutaro2011designing} were all encountered. 
 The behaviorSim model building tool explored in this publication aims to help fill this gap by creating a specialized framework in the area of human behavior modeling.
 
@@ -514,14 +512,14 @@ Agent models are generally developed for one of two purposes: 1) to act as an in
 Here we present findings from multiple iterations of development of a tool designed to help behavioral scientists formulate computational models of human behavior.
 After casting a wide net initially to characterize the targeted use-case, evaluation at each step of this iterative process small numbers of expert testers as guided by industry practice \cite{nielsen2000}.
 
-\subsection{Paper-prototype Model-Building Task}
-A paper prototype served as the first iteration of the model-builder tool.
-This prototype was simply a quiz-style questionnaire which resulted in a model.
-This questionnaire was tested on a small user group of both behavioral scientists and graduate students, and was evaluated informally through discussion.
-
-This prototype allowed us to identify some major challenges early on.
-Namely, we found that careful choice of terminology was important, since some overlapping terms were the cause of significant confusion.
-Reviewers also found the tasks presented much too challenging and strongly suggested the inclusion of an example model.
+% \subsection{Paper-prototype Model-Building Task}
+% A paper prototype served as the first iteration of the model-builder tool.
+% This prototype was simply a quiz-style questionnaire which resulted in a model.
+% This questionnaire was tested on a small user group of both behavioral scientists and graduate students, and was evaluated informally through discussion.
+% 
+% This prototype allowed us to identify some major challenges early on.
+% Namely, we found that careful choice of terminology was important, since some overlapping terms were the cause of significant confusion.
+% Reviewers also found the tasks presented much too challenging and strongly suggested the inclusion of an example model.
 %TODO: include terms or table of terms here
 % MODEL:
 % A model is comprised of a network of variables and their interrelations.
@@ -532,7 +530,7 @@ Reviewers also found the tasks presented much too challenging and strongly sugge
 % In general, however, a graph is comprised of nodes and edges which represent the variables and their connections, respectfully. 
    
 \subsection{SBM Questionnaire}
-In the second iteration we focused on a few key elements of the model building process to greatly simplify and shorten the modeling exercise.
+In this questionnaire we focus on a few key elements of the model building process to greatly simplify and shorten the modeling exercise.
 A context and behavioral outcome based on physical activity were given, and users efforts were focused on defining the inner workings of the human system within these constraints.
 Reviewers of this iteration were also asked to complete several survey items about the barriers keeping modeling and simulation out of behavioral science.
 
@@ -549,43 +547,39 @@ The behaviorSim Model-Building tool is a computational model-development environ
 In this iteration the modeling process is divided into the following five stages:
 
 think - 
-Write out an explanation of your model. 
-How does it work? 
-What are the constructs involved? 
-What kind of information is coming into the model?
+Explain the model.  
+List constructs, information is coming into the model.
 
 draw - 
-Create an "information flow" path diagram to represent your theory. 
-Draw the flow of information between constructs. 
-What are the inflows to each, what are the outflows of each?
+Create a path diagram(s). 
+Connect inflows, outflows between constructs. 
 
 specify - 
 How exactly can each construct be calculated from the inflows? 
-Use a fluid-flow analogy or linear combination to define a starting function and then adjust weights, delays, etc until the construct behaves as you think it should. 
-Do lots of thought experiments. 
-What should each step response look like? 
-What should each impulse response look like?
+%Use a fluid-flow analogy or linear combination to define a starting function and then adjust weights, delays, etc until the construct behaves as you think it should. 
+%What should each step response look like? 
+%What should each impulse response look like?
 
 reconcile - 
 Compare your simulation to real data. 
-Compare individual data and group data. 
-Compare the data at different time-scales. 
-How can you adjust the constants in your model to match the data? 
-Use semi-physical and gray-box model optimization methods. 
-Specify which constructs are most important to match and which may be less important by adjusting the cost function.
+%Compare individual data and group data. 
+%Compare the data at different time-scales. 
+Adjust model constants to match the data. 
+%Use semi-physical and gray-box model optimization methods. 
+%Specify which constructs are most important to match and which may be less important by adjusting the cost function.
 
 play - 
 Explore all the 'what ifs' of your model. 
-Use system identification techniques on data to inform the next iteration of your model. 
-Is your model missing anything? 
-Is there anything in the data which you cannot explain? 
+%Use system identification techniques on data to inform the next iteration of your model. 
+%Is your model missing anything? 
+%Is there anything in the data which you cannot explain? 
 
-\begin{figure}[!t]
-  \centering
-  \includegraphics[width=0.5\columnwidth]{img/behaviorSim_process}  
-  \caption{The five stages implemented in v1 of the behaviorSim Model Builder.}
-  \label{model-builder-stages}
-\end{figure}
+% \begin{figure}[!t]
+%   \centering
+%   \includegraphics[width=0.4\columnwidth]{img/behaviorSim_process}  
+%   \caption{The five stages implemented in v1 of the behaviorSim Model Builder.}
+%   \label{model-builder-stages}
+% \end{figure}
   
 The first iteration of the behaviorSim Model-Builder (see figure \ref{model-builder-v1}) took a step-wise approach to implementing these stages.
 This tool focuses on the first three stages (think, draw, specify), as the problem of data reconciliation and analysis falls outside the scope of our basic model building tool.
@@ -615,8 +609,7 @@ Though the steps in the outlined model development process are accurate, a step-
 Users who are forced to explore the process step-by-step have difficulty understanding how earlier choices related to later results, and feel constrained by previous choices rather than backtracking to revise the model.
 This design does not allow for quick iteration on models, and requires the user to maintain a great deal of planning information internally.
 Though the information flow diagram employed in this version worked well to convey information about the model to the users, the graph was also assumed to be interactive - participants made attempts to modify the graph by clicking, and attempted to select nodes in the specification stage by clicking on them.
-
-Our review concluded that a less literal approach to the five stages of the modeling process was needed, and a greater focus on the graphical model could greatly improve user experience.
+% Our review concluded that a less literal approach to the five stages of the modeling process was needed, and a greater focus on the graphical model could greatly improve user experience.
 
 \subsection{behaviorSim Model-Building Tutorial v1}
 After reviewing v1 of the behaviorSim Model Builder tool, a tutorial was designed to help bridge the knowledge gap for new modelers looking to use the tool.
@@ -638,7 +631,7 @@ The same think-aloud protocol as used for the evaluation of v1 of the model buil
 Through this evaluation it became clear that even more explicit definition of terms was needed in order to clarify persistent disciplinary differences.
 Reviewers also wanted better explanation of the models' input parameters and of the functional definition of the system.
 They were not content with the hard-coded environmental inputs and wanted to be able to define how the contextual inflows changed over time.
-Though the hybrid graph was found helpful in conveying the connection between path diagram nodes and time series, the shared time-axis was not obvious, and reviewers expressed a need for more explicit x and y axes as well as a better explanation as to what ``10 units of self efficacy'' at some point in time actually means.
+Though the hybrid graph was found helpful in conveying the connection between path diagram nodes and time series, the shared time-axis was not obvious, and reviewers expressed a need for more explicit x and y axes as well as a better explanation as to what ``10 units of self efficacy'' actually means.
 
 \subsection{behaviorSim Model-Building Tool v2}
 The second major version of the behaviorSim Model Building tool attempted to unify all steps of the modeling process (figure \ref{model-builder-stages}) into a single-page application.
@@ -652,7 +645,7 @@ The type of each node is then inferred from the number of inflows and outflows.
 This approach combines stages 1 (think) and 2 (draw) in into a single user action.
 
 The ``miniature simulation'' concept allows users to specify hypothetical contexts in which to explore the model dynamics, without the need to specify the full model.
-Users can specify environmental inflows for the ``miniature simulation'', choosing from adjustable presets (square wave, step function, random walk, or constant value).
+Users can specify environmental inflows for the simulation, choosing from adjustable presets (square wave, step function, random walk, or constant value).
 Selecting nodes on the graph by clicking, users can traverse the graph in any order.
 Time-series plots of inflows as well as the resulting outflow at each node are provided using the miniature simulation model.
 Internal state and behavioral nodes are specified similarly to environmental inflows through customization of function presets such as ``linear combination'' and ``fluid flow analogy''\cite{martin2014dynamical}.
@@ -745,10 +738,11 @@ It should be noted at this point that although the linear formulation is too sim
 This is accomplished by setting coefficients of dynamical components to 0.
 One might think, then, that there is some general formula which could express any functional form, and that this form should be used to express the relationships between variables in our HBM graphs.
 While such formulations do exist (such as Taylor or Fourier series approximations or even ANN-based relations), this usage tends to make the model difficult to understand and to simulate with.
-Indeed, linear and differential formulations are in such widespread use because of the relative ease with which we can understand and solve them. An additional problem raised by this approach is that of redundant formulations.
-As a formulation grows in complexity there are an increasing number of solutions which may fit our requirements equally well, creating more potential for confusion between researchers.
-Formulations could even subvert the "arrow direction" by drawing information contrary to our original choice of notation.
-The graph can then no longer be considered a directed graph, and the meaning of an edge becomes less clear.
+Indeed, linear and differential formulations are in such widespread use because of the relative ease with which we can understand and solve them. 
+% An additional problem raised by this approach is that of redundant formulations.
+% As a formulation grows in complexity there are an increasing number of solutions which may fit our requirements equally well, creating more potential for confusion between researchers.
+% Formulations could even subvert the "arrow direction" by drawing information contrary to our original choice of notation.
+% The graph can then no longer be considered a directed graph, and the meaning of an edge becomes less clear.
 Additionally, the table of coefficients needed to express an ideographic case of the model quickly becomes prohibitively large, and the effect of each coefficient on the outcome is not intuitively meaningful.
 
 Let us now consider the case where a graph-wide assumption is \emph{NOT} made.
@@ -840,13 +834,7 @@ On the other hand, DSL parsing errors can be a major source of confusion and use
 \subsubsection{Use Graph-Wide Rule?}
 This choice can come before or after the initial drawing of the graph, since it is likely the user has a graph-wide assumption in mind when starting the process. 
 This choice determines whether or not the interface for specifying nodes individually is shown, so it is logical to think of the "none", "node-specific", or "node-unique" option as one of the choices available here. 
-
-As an example, some graph-wide rules which may be implemented include:
-\begin{enumerate}
-  \item Probabilistic Graphical Network
-  \item Linear Sum
-  \item Fluid-Flow Analogy / Differential Equation Formulation
-\end{enumerate}
+As an example, some graph-wide rules which may be implemented include a probabilistic graphical network, linear sum assumption, fluid-flow analogy.
 
 If a graph-wide rule is set, the formulation section for each node should show as locked to the rule's respective formulation. 
 Editing an individual node's formulation will disable the graph-wide rule, and should require confirmation from the user. 
@@ -854,10 +842,10 @@ The interface for choosing one of these rules may be as simple as a select-optio
 An additional feature which may be useful is to allow for user-defined graph-wide rules. 
 In this case, users might choose "create new rule" and an interface to allow users to edit and save graph-wide rules is needed.
 
-\subsubsection{For Each Node}
-
-Items encapsulated by the "for each node" swim-lanes must be executed for each node in the graph. 
-The graph-wide-rule-yes case differs from the graph-wide-rule-no case only in that the graph-wide-rule-no case requires the additional step of setting the formulation at each node.
+% \subsubsection{For Each Node}
+% 
+% Items encapsulated by the "for each node" swim-lanes must be executed for each node in the graph. 
+% The graph-wide-rule-yes case differs from the graph-wide-rule-no case only in that the graph-wide-rule-no case requires the additional step of setting the formulation at each node.
 
 \subsubsection{Choose a Formulation}
 This item is identical to the graph-wide rule choice, except that it applies only to a single node. Similar design considerations apply, and user-defined choice is even more important at this scale.
@@ -870,51 +858,47 @@ Similarly, the coefficients of a dynamical equation define how quickly variables
 UI for setting these constants could be as simple as a numerical input for each coefficient's name, but additional model details provided here may be of great benefit to the model designer. 
 
 First, UI should include equation-specific descriptions of the constants whenever possible. This means that a separate UI for each formulation type is necessary. 
-
 Second, adjustment of coefficients would ideally show changes in the dynamics of a node's value in real-time. 
 This can take the form of a time-series chart of the selected node's numerical value over time along with (editable) time-series for the inflows. 
 Adjustment of these inflow series may also take a number of different forms. 
-
 Third, model creators may want to set these coefficients in three different ways: 
-\paragraph{ Set the coefficient value to a constant}
+\paragraph{Set the coefficient value to a constant}
 All simulations derived from this general solution will have this exact value.
 
-\paragraph{ Set a probability distribution for the coefficient}
+\paragraph{Set a probability distribution for the coefficient}
 Simulations derived from this general solution will select a numerical value based on the given distribution. 
 This distribution may be learned from a training dataset, or bounds may be set for later training. 
 
-\paragraph{ Leave the variable unbounded and assume a flat probability distribution}
+\paragraph{Leave the variable unbounded and assume a flat probability distribution}
 This selection is identical to option 2 with a flat distribution from -infinity to +infinity, but may deserve special inclusion due to the comparatively low complexity (making this option appealing for novice users).
 
-
 These different ways of defining coefficients in a HBM become significant when it is time to run simulations and compare model results to real data. 
+Last, model creators may want to use a measured value to set the value of these coefficients. In this way, one measured input (in real life), such as big-5 personality type, can be used to set the value of multiple coefficients across different variables in the model.
 
-Lastly, model creators may want to use a measured value to set the value of these coefficients. In this way, one measured input (in real life), such as big-5 personality type, can be used to set the value of multiple coefficients across different variables in the model.
+% \subsubsection{Nodes Left?}
+% %This is the most simple element of the flowchart. 
+% No if there are unspecified nodes remaining, yes if all are complete. 
+% It should be left to the user to confirm model-completeness, however, since a great deal of model-tweaking is likely now that simulation results can be displayed.
+% 
+% \subsubsection{Next Node}
+% Progression downstream through the model should be relatively straightforward in the case of tree-like models, but feedback loops can cause issues here. 
+% Perhaps the best paradigm here is to progress as naturally as possible, but allow the user to over-ride and select any node. 
+% This interaction mode will also be needed to allow for later model-tweaking. 
 
-\subsubsection{Nodes Left?}
-%This is the most simple element of the flowchart. 
-No if there are unspecified nodes remaining, yes if all are complete. 
-It should be left to the user to confirm model-completeness, however, since a great deal of model-tweaking is likely now that simulation results can be displayed.
-
-\subsubsection{Next Node}
-Progression downstream through the model should be relatively straightforward in the case of tree-like models, but feedback loops can cause issues here. 
-Perhaps the best paradigm here is to progress as naturally as possible, but allow the user to over-ride and select any node. 
-This interaction mode will also be needed to allow for later model-tweaking. 
-
-\subsection{Planned Implementation}
-Version 3 of the model builder addresses the issues uncovered in previous versions by relying on a flow-based programming interface.
-Flow-based programming has seen increased usage across a multiple engineering domains, and seems to fit the task of system specification particularly well.
-Using an open-source implementation of a flow-based programming protocol, noflo.js, the graphical representation of the model can be further connected to the formulation.  %TODO: cite
-Node inputs (constants, coefficients, other nodes) can be directly shown as input hubs on the node, and differing node formulations can be represented graphically.
-
-% TODO: * how does this new design use the design guidelines outlined?
-
-\begin{figure}[!t]
-  \centering
-  \includegraphics[width=0.9\columnwidth]{img/v3}  
-  \caption{behaviorSim Model Builder v3 brings increased focus onto the graph using a flow-based programming approach.}
-  \label{model-builder-v3}
-\end{figure}
+% \subsection{Planned Implementation}
+% Version 3 of the model builder addresses the issues uncovered in previous versions by relying on a flow-based programming interface.
+% Flow-based programming has seen increased usage across a multiple engineering domains, and seems to fit the task of system specification particularly well.
+% Using an open-source implementation of a flow-based programming protocol, noflo.js, the graphical representation of the model can be further connected to the formulation.  %TODO: cite
+% Node inputs (constants, coefficients, other nodes) can be directly shown as input hubs on the node, and differing node formulations can be represented graphically.
+% 
+% % TODO: * how does this new design use the design guidelines outlined?
+% 
+% \begin{figure}[!t]
+%   \centering
+%   \includegraphics[width=0.9\columnwidth]{img/v3}  
+%   \caption{behaviorSim Model Builder v3 brings increased focus onto the graph using a flow-based programming approach.}
+%   \label{model-builder-v3}
+% \end{figure}
 
 \section{Conclusion}
 % TODO: revise
